@@ -1,0 +1,27 @@
+<IfModule mod_rewrite.c>
+    # Debe estar instalado en Apache el módulo: mod_rewrite
+    # $ sudo a2enmod rewrite
+    
+    #Options -MultiViews
+    RewriteEngine On
+    ##RewriteBase /path/to/app
+    RewriteCond %{REQUEST_FILENAME} !-f
+    #RewriteRule ^ index.php [L]
+    
+    # En lugar de escribir: http://localhost/pruebasilex2/web/1.php/hola
+    # escribimos: http://localhost/pruebasilex2/web/hola
+    RewriteRule  ^ 1.php [L]
+    
+    #RewriteRule ^ /web/index.php [L]
+   
+</IfModule>
+
+# rbb@rbbubuntu:/etc/apache2$ sudo gedit apache2.conf
+
+#### Inicio RAFAEL BASCÓN
+#<Directory /var/www/pruebasilex2/web>
+#    DirectoryIndex index.php
+#    AllowOverride All
+#    Allow from All 
+#</Directory>
+#### Fin RAFAEL BASCÓN
