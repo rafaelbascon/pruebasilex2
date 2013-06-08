@@ -14,12 +14,12 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 $app = new Silex\Application();
 
 $app['debug'] = true;
-// http://localhost/pruebasilex2/web/11.php/usuarios/22
+// http://localhost/pruebasilex2/web/12.php/usuarios/22
 
 $app->get('/usuarios/{id}', function ($id) use ($app) {
     
     //$user = getUser($id);
-    $user = array( 'nombre' => 'Rafael' , 'apellidos' => 'Bascón Barrera', 'edad' => '44');
+    $user = array( 'nombre' => 'Rafael' , 'apellidos' => 'Bascón', 'edad' => '44');
 
     if (!$user) {
         $error = array('message' => 'No se ha encontrado al usuario.');
